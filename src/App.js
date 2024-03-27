@@ -1,4 +1,4 @@
-import {RecoilRoot} from "recoil";
+import { RecoilRoot } from "recoil";
 import Login from "./Components/login";
 import UserData from "./Components/UserData";
 

@@ -1,12 +1,12 @@
-import {useState} from "react";
-import {useRecoilValue, useResetRecoilState, useSetRecoilState} from "recoil";
-import {UserState} from "../States/UserState";
+import { useState } from "react";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { UserState } from "../States/UserState";
 
 
 const Login=()=>{
 
-    const [email,setEmail]=useState("admin@admin.com");
-    const [password,setPassword]=useState("12345");
+    const [email,setEmail]=useState();
+    const [password,setPassword]=useState();
     const setUserState=useSetRecoilState(UserState);
 
 
