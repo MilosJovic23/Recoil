@@ -25,19 +25,22 @@ const Login=()=>{
     }
 
     const userData=useRecoilValue(UserState)
-    console.log(userData.LoggedIn,userData.email)
 
     return(
         <>
 
             {!userData.LoggedIn? (
             <form>
-                <input type="text" onInput={e => setEmail(e.currentTarget.value)}/>
-                <input type="password" onInput={e => setPassword(e.currentTarget.value)}/>
-                <button type="button" onClick={HandleLogin}>Login</button>
+                <input type="text" onInput=
+                    {e => setEmail(e.currentTarget.value)}/>
+                <input type="password" onInput=
+                    {e => setPassword(e.currentTarget.value)}/>
+                <button type="button" onClick=
+                    {HandleLogin}>Login</button>
             </form>
             ):(
-            <button type="button" onClick={HandleLogout}>Logout</button>
+            <button type="button" onClick=
+                {HandleLogout}>Logout</button>
             )
             }
 
