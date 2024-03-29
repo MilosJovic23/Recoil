@@ -20,17 +20,6 @@ const CreateTasks= ()=>{
 
     return(
         <>
-            {Tasks.map((el,index)=>{
-
-                const deleteTask=()=>{console.log("test")}
-                return (
-                    <div>
-                        <p>{el}</p>
-                        <button type="button" key={index} onClick={deleteTask}>delete</button>
-                    </div>
-
-                )
-            })}
             <input type="text" onInput=
                 {e => setTaskName(e.currentTarget.value)}/>
             <button type="button" onClick={createTask}>CreateTask</button>
