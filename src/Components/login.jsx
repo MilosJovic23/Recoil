@@ -12,7 +12,7 @@ const Login=()=>{
     const {register,handleSubmit,formState:{errors}} =useForm()
 
     const onSubmit=(data)=>{
-        console.log(data);
+
         setUserState({
             "LoggedIn":true,
             "email":data.email
