@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { UserState } from "../States/UserState";
 import { useForm } from "react-hook-form";
@@ -8,24 +8,24 @@ import { PasswordValidator } from "../Validators/PasswordValidator";
 
 const Login=()=>{
 
-    const [email,setEmail]=useState();
-    const [password,setPassword]=useState();
     const setUserState=useSetRecoilState(UserState);
     const {register,handleSubmit,formState:{errors}} =useForm()
 
-    const onSubmit=data=>console.log(data)
-    const HandleLogin=()=>{
-        console.log("test")
-       setUserState({
-           "LoggedIn":true,
-       })
+    const onSubmit=(data)=>{
+        console.log(data);
+        setUserState({
+            "LoggedIn":true,
+            "email":data.email
+        });
     }
+
 
     const HandleLogout=()=>{
     setUserState({})
     }
 
     const userData=useRecoilValue(UserState)
+    console.log(userData.data)
 
     return(
         <>
@@ -35,8 +35,7 @@ const Login=()=>{
                 {errors.email && (<p>{errors.email.message}</p>) }
                 <input type="text" {...register("email", EmailValidator )} />
                 {errors.password && (<p>{errors.password.message}</p>) }
-                <input type="password" {...register("password", PasswordValidator  )} onInput=
-                    {e => setPassword(e.currentTarget.value)}/>
+                <input type="password" {...register("password", PasswordValidator  )} />
                 <button  >Login</button>
             </form>
             ):(

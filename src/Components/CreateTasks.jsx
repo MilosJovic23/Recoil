@@ -12,7 +12,7 @@ const CreateTasks= ()=>{
     console.log(Tasks)
 
     const createTask= ()=>{
-        setTasks(tasks=>[...tasks, {"name":taskName,"id":2}])
+        setTasks(tasks=>[...tasks,taskName])
     }
     const deleteAllTasks= ()=>{
         setTasks([])
