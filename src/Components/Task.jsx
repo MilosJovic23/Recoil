@@ -1,5 +1,5 @@
 import CreateTasks from "./CreateTasks";
-import {useRecoilValue, useSetRecoilState} from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { UserState } from "../States/UserState";
 import { TasksState } from "../States/TasksState";
 
