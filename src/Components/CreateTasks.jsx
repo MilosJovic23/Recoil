@@ -2,7 +2,7 @@ import {useRecoilValue, useSetRecoilState} from "recoil";
 import { TasksState } from "../States/TasksState";
 import { useForm } from "react-hook-form";
 import { TaskValidator } from "../Validators/TaskValidator";
-import {useState} from "react";
+import { useState } from "react";
 
 
 const CreateTasks= ()=>{
