@@ -1,4 +1,3 @@
-
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { UserState } from "../States/UserState";
 import { useForm } from "react-hook-form";
@@ -25,7 +24,6 @@ const Login=()=>{
     }
 
     const userData=useRecoilValue(UserState)
-    console.log(userData.data)
 
     return(
         <>

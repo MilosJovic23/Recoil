@@ -1,4 +1,4 @@
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { TasksState } from "../States/TasksState";
 import { useForm } from "react-hook-form";
 import { TaskValidator } from "../Validators/TaskValidator";
@@ -8,10 +8,8 @@ const CreateTasks= ()=>{
 
     const { register,handleSubmit,formState:{errors} } =useForm()
     const setTasks=useSetRecoilState(TasksState)
-    const Tasks=useRecoilValue(TasksState);
 
     const onSubmit= (data)=>{
-        console.log(data,Tasks)
         setTasks(tasks=>[...tasks,data.taskName])
     }
     const deleteAllTasks= ()=>{

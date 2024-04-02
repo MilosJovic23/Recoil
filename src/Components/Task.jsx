@@ -16,27 +16,25 @@ const Task=()=>{
     }
     return(
                 <>
-
                     {Tasks.map((taskName,index)=>{
-                        return(
 
+                        return(
                             <div key={index}>
                                 <p>{taskName}</p>
                                 <button type="button" onClick={()=>deleteTask(taskName)}>delete task</button>
                             </div>
-
                         )
+
                     })}
 
                     {userData.LoggedIn &&
                     (
+
                     <div>
                         <CreateTasks/>
                     </div>
 
                     )}
-
-
                 </>
 
 
