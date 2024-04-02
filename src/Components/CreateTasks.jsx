@@ -1,5 +1,4 @@
-
-import {useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { TasksState } from "../States/TasksState";
 import { useForm } from "react-hook-form";
 import { TaskValidator } from "../Validators/TaskValidator";
@@ -22,7 +21,7 @@ const CreateTasks= ()=>{
     return(
         <>
             <form onSubmit={ handleSubmit(onSubmit) }>
-                {errors.taskName && ( <p>{errors.taskName.message}</p> )}
+                { errors.taskName && (<p>{errors.taskName.message}</p>) }
                 <input type="text" {...register("taskName", TaskValidator )}/>
                 <button>CreateTask</button>
                 <button type="button" onClick={ deleteAllTasks }>DeleteAll</button>
