@@ -1,4 +1,4 @@
-import {useRecoilValue, useSetRecoilState} from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { TasksState } from "../States/TasksState";
 import { useForm } from "react-hook-form";
 import { TaskValidator } from "../Validators/TaskValidator";
