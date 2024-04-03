@@ -21,27 +21,28 @@ const Task=()=>{
                     {userData.LoggedIn &&
                     (
                         <div>
-                        {Tasks.map((taskName,index)=>{
 
-                                return(
-                                    <div key={index}>
-                                        <p>{taskName}</p>
-                                        <button type="button" onClick={()=>deleteTask(taskName)}>delete task</button>
-                                    </div>
-                                )
+                                {Object.keys(Tasks).map((task,index)=>{
+                                    console.log(Tasks[task])
 
-                            })}
+                                    return (
+                                        <div key={index}>
+                                            <p>{Tasks[task].name}</p>
+                                            <button type="button" onClick={() => deleteTask(Tasks[task].name)}>delete task</button>
+                                        </div>
+                                    )
+                                })}
 
 
-                        <CreateTasks/>
-                    </div>
+
+                            <CreateTasks/>
+                        </div>
 
                     )}
                 </>
 
 
-
-          )
+    )
 }
 
 export default Task;

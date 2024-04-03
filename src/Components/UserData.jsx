@@ -6,8 +6,6 @@ const UserData=()=>{
 
     const userData=useRecoilValue(UserState)
 
-    console.log(userData)
-
     return(
         <p>{userData.LoggedIn}</p>
     )

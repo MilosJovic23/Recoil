@@ -13,17 +13,21 @@ const CreateTasks= ()=>{
     const [taskNameError,setTaskNameError]=useState("");
     let taskFound=false;
     const onSubmit= (data)=>{
-        if(Tasks.includes(data.taskName)){
-            setTaskNameError("Postoji task sa tim imenom");
-            taskFound=true;
-            return;
+        Object.keys(Tasks).map((task)=>{
+            if( Tasks[task].name === data.taskName ){
+                setTaskNameError("Postoji task sa takvim imenom");
+                taskFound = true;
+            }
+        })
+
+         if(!taskFound){
+            setTasks((tasks)=>[...tasks,{"name":data.taskName,"id":"1232534"}])
+            setTaskNameError("")
         }
-        setTasks(tasks=>[...tasks,data.taskName])
-        setTaskNameError("")
+        return;
     }
-    const deleteAllTasks= ()=>{
-        setTasks([])
-    }
+
+
 
     return(
         <>
@@ -32,7 +36,6 @@ const CreateTasks= ()=>{
                 { errors.taskName && (<p>{errors.taskName.message}</p>) }
                 <input type="text" {...register("taskName", TaskValidator )}/>
                 <button>CreateTask</button>
-                <button type="button" onClick={ deleteAllTasks }>DeleteAll</button>
             </form>
 
         </>
