@@ -28,7 +28,7 @@ const CreateTasks= ()=>{
     return(
         <>
             <form onSubmit={ handleSubmit(onSubmit) }>
-                {!taskFound && (<p>{taskNameError}</p>)}
+                { !taskFound && (<p>{taskNameError}</p>) }
                 { errors.taskName && (<p>{errors.taskName.message}</p>) }
                 <input type="text" {...register("taskName", TaskValidator )}/>
                 <button>CreateTask</button>
