@@ -22,21 +22,26 @@ const CreateTasks= ()=>{
         })
 
          if(!taskFound){
+             const time=new Date();
+             console.log(time)
             setTasks((tasks)=>[...tasks,{"name":data.taskName,"id":"1232534"}])
             setTaskNameError("")
         }
         return;
     }
 
-
+    const deleteAllTasks=()=>{
+        setTasks([])
+    }
 
     return(
         <>
-            <form onSubmit={ handleSubmit(onSubmit) }>
-                { !taskFound && (<p>{taskNameError}</p>) }
-                { errors.taskName && (<p>{errors.taskName.message}</p>) }
-                <input type="text" {...register("taskName", TaskValidator )}/>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                {!taskFound && (<p>{taskNameError}</p>)}
+                {errors.taskName && (<p>{errors.taskName.message}</p>)}
+                <input type="text" {...register("taskName", TaskValidator)}/>
                 <button>CreateTask</button>
+                <button type="button" onClick={ deleteAllTasks }>Delete All</button>
             </form>
 
         </>
