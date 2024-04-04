@@ -8,11 +8,14 @@ const Task=()=>{
 
     const Tasks=useRecoilValue(TasksState);
     const userData=useRecoilValue(UserState);
-    const setTaskData=useSetRecoilState(TasksState)
-    const deleteTask=(taskName)=>{
-        const filteredTasks=Tasks.filter(task=>task!==taskName);
-        setTaskData(filteredTasks)
+    const setTaskData=useSetRecoilState(TasksState);
+    console.log(Tasks);
+    const deleteTask=( task )=>{
 
+        const filteredTasks=Tasks.filter( (el)=> el.name !== task )
+
+
+        setTaskData(filteredTasks)
     }
     return(
                 <>
@@ -23,12 +26,11 @@ const Task=()=>{
                         <div>
 
                                 {Object.keys(Tasks).map((task,index)=>{
-                                    console.log(Tasks[task])
 
                                     return (
                                         <div key={index}>
-                                            <p>{Tasks[task].name}</p>
-                                            <button type="button" onClick={() => deleteTask(Tasks[task].name)}>delete task</button>
+                                            <p>{ Tasks[task].name }</p>
+                                            <button type="button" onClick={ () => deleteTask( Tasks[task].name ) }>delete task</button>
                                         </div>
                                     )
                                 })}
