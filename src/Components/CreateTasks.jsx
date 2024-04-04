@@ -13,6 +13,7 @@ const CreateTasks= ()=>{
     const [taskNameError,setTaskNameError]=useState("");
     let taskFound=false;
     const onSubmit= (data)=>{
+
         Object.keys(Tasks).map((task)=>{
             if( Tasks[task].name === data.taskName ){
                 setTaskNameError("Postoji task sa takvim imenom");

@@ -14,7 +14,7 @@ export const PasswordValidator={
     validate:   {
         trimCheck:
             value => value.trim() !== "" || "password cannot be empty or spaces only",
-        passCheck:
+        passCheckPassword:
             value => value === ("12345") || "invalid password"
 
     }

@@ -11,7 +11,7 @@ export const EmailValidator={
         message: "invalid email address"
     },
     validate:   {
-        emailCheck:
+        emailCheckAdmin:
             value => value === ("admin@admin.com") || "invalid email"
     }
 }
