@@ -23,8 +23,9 @@ const CreateTasks= ()=>{
 
          if(!taskFound){
              const time=new Date();
-             console.log(time)
-            setTasks((tasks)=>[...tasks,{"name":data.taskName,"id":"1232534"}])
+             const idByCurrentTime=`${time.getHours()}${time.getMinutes()}${time.getSeconds()}${time.getMilliseconds()}`;
+
+            setTasks((tasks)=>[...tasks,{"name":data.taskName,"id": idByCurrentTime }])
             setTaskNameError("")
         }
         return;
