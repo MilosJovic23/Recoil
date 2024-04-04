@@ -9,13 +9,12 @@ const Task=()=>{
     const Tasks=useRecoilValue(TasksState);
     const userData=useRecoilValue(UserState);
     const setTaskData=useSetRecoilState(TasksState);
-    console.log(Tasks);
+
     const deleteTask=( task )=>{
 
         const filteredTasks=Tasks.filter( (el)=> el.name !== task )
-
-
         setTaskData(filteredTasks)
+
     }
     return(
                 <>
