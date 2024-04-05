@@ -25,7 +25,7 @@ const CreateTasks= ()=>{
 
          if(!taskFound){
              const time=new Date();
-             const idByCurrentTime=` ${time.getHours()}${time.getMinutes()}${time.getSeconds()}${time.getMilliseconds()} `;
+             const idByCurrentTime=`${time.getHours()}${time.getMinutes()}${time.getSeconds()}${time.getMilliseconds()}`;
 
             setTasks((tasks)=>[...tasks,{ "id":idByCurrentTime,"name":data.taskName, "category":data.taskCategory }])
             setTaskNameError("")
@@ -39,7 +39,7 @@ const CreateTasks= ()=>{
 
     return(
         <>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={ handleSubmit(onSubmit) }>
 
                 { !taskFound && (<p>{taskNameError}</p>) }
                 { errors.taskName && ( <p>{errors.taskName.message}</p> ) }

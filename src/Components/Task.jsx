@@ -10,9 +10,9 @@ const Task=()=>{
     const userData=useRecoilValue(UserState);
     const setTaskData=useSetRecoilState(TasksState);
 
-    const deleteTask=( task )=>{
+    const deleteTask=( taskName )=>{
 
-        const filteredTasks=Tasks.filter( (el)=> el.name !== task )
+        const filteredTasks=Tasks.filter( (task)=> task.name !== taskName )
         setTaskData(filteredTasks)
 
     }
