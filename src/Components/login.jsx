@@ -31,9 +31,9 @@ const Login=()=>{
             {!userData.LoggedIn? (
             <form onSubmit={ handleSubmit(onSubmit) }>
                 { errors.email && (<p>{errors.email.message}</p>) }
-                <input type="text" {...register("email", EmailValidator )} />
+                <input type="text" placeholder="email" {...register("email", EmailValidator )} />
                 { errors.password && (<p>{errors.password.message}</p>) }
-                <input type="password" {...register("password", PasswordValidator  )} />
+                <input type="password" placeholder="password" {...register("password", PasswordValidator  )} />
                 <button  >Login</button>
             </form>
             ):(
