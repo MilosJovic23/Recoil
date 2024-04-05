@@ -18,27 +18,23 @@ const Task=()=>{
     }
     return(
                 <>
-
-
                     {userData.LoggedIn &&
                     (
                         <div>
 
-                                {Object.keys(Tasks).map((task,index)=>{
+                                {Tasks.map((task,index)=>{
 
                                     return (
                                         <div key={index}>
-                                            <p>{ Tasks[task].name }</p>
-                                            <button type="button" onClick={ () => deleteTask( Tasks[task].name ) }>delete task</button>
+                                            <p>{ task.name }</p>
+                                            <button type="button" onClick={ () => deleteTask( task.name ) }>delete task</button>
                                         </div>
                                     )
                                 })}
 
-
-
                             <CreateTasks/>
-                        </div>
 
+                        </div>
                     )}
                 </>
 
