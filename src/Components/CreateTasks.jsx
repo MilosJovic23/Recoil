@@ -15,10 +15,9 @@ const CreateTasks= ()=>{
     let taskFound=false;
     const onSubmit= (data)=>{
 
-        console.log(Tasks)
 
-        Object.keys(Tasks).map((task)=>{
-            if( Tasks[task].name === data.taskName ){
+        Tasks.map((task)=>{
+            if( task.name === data.taskName ){
                 setTaskNameError("Postoji task sa takvim imenom");
                 taskFound = true;
             }
@@ -42,9 +41,9 @@ const CreateTasks= ()=>{
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
 
-                {!taskFound && (<p>{taskNameError}</p>)}
-                {errors.taskName && (<p>{errors.taskName.message}</p>)}
-                <input type="text" {...register("taskName", TaskValidator)}/>
+                { !taskFound && (<p>{taskNameError}</p>) }
+                { errors.taskName && ( <p>{errors.taskName.message}</p> ) }
+                <input type="text" {...register("taskName", TaskValidator )}/>
                 <select {...register("taskCategory")} >{TaskCategories.map((task) => {
                     return <option>{task}</option>
                 })}</select>
