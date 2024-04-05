@@ -3,7 +3,7 @@ import { TasksState } from "../States/TasksState";
 import { useForm } from "react-hook-form";
 import { TaskValidator } from "../Validators/TaskValidator";
 import { useState } from "react";
-import {TaskCategories} from "../TasksCategories/TaskCategories";
+import { TaskCategories } from "../TasksCategories/TaskCategories";
 
 
 const CreateTasks= ()=>{
@@ -27,7 +27,7 @@ const CreateTasks= ()=>{
              const time=new Date();
              const idByCurrentTime=` ${time.getHours()}${time.getMinutes()}${time.getSeconds()}${time.getMilliseconds()} `;
 
-            setTasks((tasks)=>[...tasks,{ "id":idByCurrentTime,"name":data.taskName, "category": data.taskCategory }])
+            setTasks((tasks)=>[...tasks,{ "id":idByCurrentTime,"name":data.taskName, "category":data.taskCategory }])
             setTaskNameError("")
         }
         return;
@@ -48,7 +48,7 @@ const CreateTasks= ()=>{
                     return <option>{task}</option>
                 })}</select>
                 <button>CreateTask</button>
-                <button type="button" onClick={deleteAllTasks}>Delete All</button>
+                <button type="button" onClick={ deleteAllTasks }>Delete All</button>
 
             </form>
 
