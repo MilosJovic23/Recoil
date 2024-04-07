@@ -44,7 +44,6 @@ const Task=()=>{
                                                         <input type="text" onInput={(e)=>setEditTaskName(e.currentTarget.value)}/>
                                                 </div>
                                                 )}
-
                                             <button type="button" onClick={() => deleteTask(task.name)}>delete task
                                             </button>
                                         </div>

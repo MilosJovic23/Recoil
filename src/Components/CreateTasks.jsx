@@ -5,7 +5,6 @@ import { TaskValidator } from "../Validators/TaskValidator";
 import { useState } from "react";
 import { TaskCategories } from "../TasksCategories/TaskCategories";
 
-
 const CreateTasks= ()=>{
 
     const { register,handleSubmit,formState:{errors} } =useForm()
@@ -54,7 +53,6 @@ const CreateTasks= ()=>{
 
         </>
     )
-
 };
 
 export default CreateTasks;
