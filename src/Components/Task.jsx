@@ -21,18 +21,18 @@ const Task=()=>{
 
     const editTask=(id)=>{
         setEditToDo(true);
-        console.log(newTaskName)
-        setTaskData(Tasks.map((task)=>{
+
+        const updatedTasks=Tasks.map((task)=>{
 
             return task.id===id ?
-                ({"id":id,"name":newTaskName,"category":task.category})
+                {"id":id,"name":newTaskName,"category":task.category}
                 :
                 task
-        }))
+        })
+        setTaskData(updatedTasks)
 
     }
     const saveTask=(newName)=>{
-        // setEditToDo(false)
         setNewTaskName(newName)
 
     }
