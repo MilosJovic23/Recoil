@@ -8,36 +8,34 @@ import {NewTaskNameValidator} from "../Validators/NewTaskNameValidator";
 import {TaskCategories} from "../TasksCategories/TaskCategories";
 
 
-const Task=()=>{
-
+const Task = () =>{
     const Tasks=useRecoilValue(TasksState);
     const userData=useRecoilValue(UserState);
     const setTaskData=useSetRecoilState(TasksState);
     const [isEdited,setIsEdited]=useState(false);
     const {register,handleSubmit,formState:{errors}}=useForm()
     const [id,setId]=useState("")
+
     const deleteTask=( taskName )=>{
 
         const filteredTasks=Tasks.filter( (task)=> task.name !== taskName )
         setTaskData(filteredTasks)
 
     }
-
-    const editTask=(id)=>{
+    const editTask=( id )=>{
         setIsEdited(true);
-        setId(id);
+        setId( id );
     }
+    const onSubmit=( data )=>{
 
-    const onSubmit=(data)=>{
+        const updatedTasks=Tasks.map(( task )=>{
 
-        const updatedTasks=Tasks.map((task)=>{
-
-            return task.id===id ?
+            return task.id === id ?
                 { "id":id,"name":data.newTaskName,"category":data.taskCategory }
                 : task ;
 
         });
-        setTaskData(updatedTasks);
+        setTaskData( updatedTasks );
         setIsEdited(false);
 
     }
