@@ -10,7 +10,7 @@ const Task=()=>{
     const Tasks=useRecoilValue(TasksState);
     const userData=useRecoilValue(UserState);
     const setTaskData=useSetRecoilState(TasksState);
-    const [editToDo,setEditToDo]=useState(false);
+    const [isEdited,setIsEdited]=useState(false);
     const [newTaskName,setNewTaskName]=useState("")
     const deleteTask=( taskName )=>{
 
@@ -20,7 +20,7 @@ const Task=()=>{
     }
 
     const editTask=(id)=>{
-        setEditToDo(true);
+        setIsEdited(true);
 
         const updatedTasks=Tasks.map((task)=>{
 
@@ -33,15 +33,15 @@ const Task=()=>{
 
     }
     const saveTask=(newName)=>{
-        setNewTaskName(newName)
+        setIsEdited(false);
 
     }
 
     return(
                 <>
-                    { editToDo && (
+                    { isEdited && (
                         <div>
-                            <input onInput={e=>saveTask(e.currentTarget.value)}></input>
+                            <input onInput={e=>setNewTaskName(e.currentTarget.value)}></input>
                             <button onClick={saveTask}>save</button>
                         </div>
 
