@@ -25,25 +25,21 @@ const Task=()=>{
 
     const editTask=(id)=>{
         setIsEdited(true);
-        setId(id)
+        setId(id);
     }
-    const saveTask=(newName)=>{
-        setIsEdited(false);
 
-    }
     const onSubmit=(data)=>{
-        console.log(id)
-        console.log(data.newTaskName);
+
         const updatedTasks=Tasks.map((task)=>{
 
             return task.id===id ?
-                {"id":id,"name":data.newTaskName,"category":data.taskCategory}
-                :
-                task
+                { "id":id,"name":data.newTaskName,"category":data.taskCategory }
+                : task ;
 
-        })
-        setTaskData(updatedTasks)
+        });
+        setTaskData(updatedTasks);
         setIsEdited(false);
+
     }
     return(
                 <>
