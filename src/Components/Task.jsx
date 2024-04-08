@@ -11,23 +11,41 @@ const Task=()=>{
     const userData=useRecoilValue(UserState);
     const setTaskData=useSetRecoilState(TasksState);
     const [editToDo,setEditToDo]=useState(false);
-    const [editTaskName,setEditTaskName]=useState("")
+    const [newTaskName,setNewTaskName]=useState("")
     const deleteTask=( taskName )=>{
 
         const filteredTasks=Tasks.filter( (task)=> task.name !== taskName )
         setTaskData(filteredTasks)
 
     }
-    const editTask=(task,id)=>{
-        console.log(task,id)
-        setEditToDo(true)
+
+    const editTask=(id)=>{
+        setEditToDo(true);
+        console.log(newTaskName)
+        setTaskData(Tasks.map((task)=>{
+
+            return task.id===id ?
+                ({"id":id,"name":newTaskName,"category":task.category})
+                :
+                task
+        }))
+
     }
-    const saveTask=()=>{
-        setEditToDo(false);
-        console.log(editTaskName)
+    const saveTask=(newName)=>{
+        // setEditToDo(false)
+        setNewTaskName(newName)
+
     }
+
     return(
                 <>
+                    { editToDo && (
+                        <div>
+                            <input onInput={e=>saveTask(e.currentTarget.value)}></input>
+                            <button onClick={saveTask}>save</button>
+                        </div>
+
+                    )}
                     {userData.LoggedIn &&
                     (
                         <div>
@@ -37,15 +55,8 @@ const Task=()=>{
                                     return (
                                         <div key={index}>
                                             <p>{task.name}</p>
-                                            { !editToDo ?
-                                                ( <button type="button" onClick={ editTask }>edit</button>):
-                                                (<div>
-                                                        <button type="button"  onClick={() => saveTask(task.name, task.id)}>save</button>
-                                                        <input type="text" onInput={(e)=>setEditTaskName(e.currentTarget.value)}/>
-                                                </div>
-                                                )}
-                                            <button type="button" onClick={() => deleteTask(task.name)}>delete task
-                                            </button>
+                                            <button type="button" onClick={() => editTask(task.id)}>edit</button>
+                                            <button type="button" onClick={() => deleteTask(task.name)}>delete task</button>
                                         </div>
                                     )
                                 })}
