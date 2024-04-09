@@ -32,6 +32,7 @@ const CreateTasks= ()=>{
         return;
     }
 
+
     const deleteAllTasks=()=>{
         setTasks([])
     }

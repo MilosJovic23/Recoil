@@ -39,6 +39,7 @@ const Task = () =>{
         setIsEdited(false);
 
     }
+
     return(
                 <>
                     { isEdited && (
