@@ -7,7 +7,6 @@ import {useForm} from "react-hook-form";
 import {NewTaskNameValidator} from "../Validators/NewTaskNameValidator";
 import {TaskCategories} from "../TasksCategories/TaskCategories";
 
-
 const Task = () =>{
     const Tasks=useRecoilValue(TasksState);
     const userData=useRecoilValue(UserState);
@@ -22,6 +21,7 @@ const Task = () =>{
         setTaskData(filteredTasks)
 
     }
+
     const editTask=( id )=>{
         setIsEdited(true);
         setId( id );

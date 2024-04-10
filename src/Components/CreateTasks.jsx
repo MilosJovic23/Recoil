@@ -14,7 +14,6 @@ const CreateTasks= ()=>{
     let taskFound=false;
     const onSubmit= (data)=>{
 
-
         Tasks.map((task)=>{
             if( task.name === data.taskName ){
                 setTaskNameError("Postoji task sa takvim imenom");
@@ -31,7 +30,6 @@ const CreateTasks= ()=>{
         }
         return;
     }
-
 
     const deleteAllTasks=()=>{
         setTasks([])
