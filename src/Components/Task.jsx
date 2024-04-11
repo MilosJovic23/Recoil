@@ -59,18 +59,27 @@ const Task = () =>{
                             { Tasks.map((task,index)=>{
 
                                     return (
-                                        <div key={ index }>
-                                            <p>{ task.name }</p>
-                                            <button type="button" onClick={() => editTask(task.id)}>edit</button>
-                                            <button type="button" onClick={() => deleteTask(task.name)}>delete task</button>
-                                        </div>
+                                        <>
+                                            <div key={index}>
+                                                <p>{task.name}</p>
+                                                <button type="button" onClick={() => editTask(task.id)}>edit</button>
+                                                <button type="button" onClick={() => deleteTask(task.name)}>delete
+                                                    task
+                                                </button>
+                                            </div>
+
+                                            <form key={index}>
+                                                <input type="text" value={task.name}/>
+                                            </form>
+                                        </>
+
                                     )
-                                })}
+                            })}
 
-                            <CreateTasks/>
+                                <CreateTasks/>
 
-                        </div>
-                    )}
+                            </div>
+                        )}
                 </>
 
 
