@@ -28,7 +28,6 @@ const Task = () =>{
         setTaskData(filteredTasks)
 
     }
-
     const newCommentPosted=(data)=>{
 
 
