@@ -18,8 +18,6 @@ const Login=()=>{
             "email":data.email
         });
     }
-
-
     const HandleLogout=()=>{
     setUserState({})
     }
