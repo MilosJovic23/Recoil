@@ -1,5 +1,5 @@
-import {useRecoilValue} from "recoil";
-import {UserState} from "../States/UserState";
+import { useRecoilValue } from "recoil";
+import { UserState } from "../States/UserState";
 
 
 const UserData=()=>{

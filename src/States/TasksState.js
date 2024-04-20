@@ -1,5 +1,5 @@
-import {atom} from "recoil";
-import {LocalStorageEffect} from "../Effects/LocalStorageEffect";
+import { atom } from "recoil";
+import { LocalStorageEffect } from "../Effects/LocalStorageEffect";
 
 
 export const TasksState=atom({
