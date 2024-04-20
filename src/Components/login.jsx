@@ -27,11 +27,11 @@ const Login=()=>{
     return(
         <>
             <div className="d-flex justify-content-center ">
-                {!userData.LoggedIn? (
+                { !userData.LoggedIn? (
                     <form className="w-25 gap-2 d-flex flex-column justify-content-center align-items-center " onSubmit={ handleSubmit(onSubmit) }>
-                        { errors.email && (<p>{errors.email.message}</p>) }
+                        { errors.email && ( <p>{ errors.email.message }</p>) }
                         <input className="form-control" type="text" placeholder="email" {...register("email", EmailValidator )} />
-                        { errors.password && (<p>{errors.password.message}</p>) }
+                        { errors.password && ( <p>{ errors.password.message }</p>) }
                         <input className="form-control" type="password" placeholder="password" {...register("password", PasswordValidator  )} />
                         <button className="btn btn-dark">Login</button>
                     </form>
