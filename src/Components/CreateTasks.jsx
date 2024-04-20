@@ -46,8 +46,8 @@ const CreateTasks= ()=>{
         <>
             <form className="createTask" onSubmit={ handleSubmit(onSubmit) }>
 
-                { !taskFound && (<p>{taskNameError}</p>) }
-                { errors.taskName && ( <p>{errors.taskName.message}</p> ) }
+                { !taskFound && (<p>{ taskNameError }</p>) }
+                { errors.taskName && ( <p>{ errors.taskName.message }</p> ) }
                 <input type="text" placeholder="Task name" {...register("taskName", TaskValidator )}/>
                 <select {...register("taskCategory")} >{TaskCategories.map((task,index) => {
                     return <option key={ index }>{task}</option>
