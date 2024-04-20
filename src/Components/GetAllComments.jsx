@@ -1,6 +1,6 @@
-import {useRecoilValue, useSetRecoilState} from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {TasksState} from "../States/TasksState";
+import { TasksState } from "../States/TasksState";
 const GetAllCommentsForPost=( { comments,taskId })=>{
 
     const Tasks=useRecoilValue(TasksState);
@@ -21,7 +21,7 @@ const GetAllCommentsForPost=( { comments,taskId })=>{
 
     return (
        <>
-           {comments?.map((comment) => (
+           { comments?.map((comment) => (
 
            <div key={comment} className="m-1 w-100">
                <div className="d-flex gap-2 align-items-center justify-content-between ">
